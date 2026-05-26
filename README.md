@@ -1,40 +1,69 @@
 # Sitios-Public
 
-Repositorio del curso de Administración y Programación de Sitios Web.
+<div align="center">
 
-Este espacio reúne materiales, prácticas y recursos del curso de Administración y Programación de Sitios Web. El programa está orientado a que los estudiantes aprendan a crear, publicar, administrar y desplegar sitios web modernos, trabajando tanto la capa de presentación como el lado del servidor.
+### Curso de Administración y Programación de Sitios Web
 
-El curso combina fundamentos de desarrollo web con ejercicios prácticos de laboratorio, uso de marcos de trabajo, administración de servidores y publicación en entornos locales y de producción. También introduce herramientas de gestión de contenido y el desarrollo de prototipos y aplicaciones web con tecnologías actuales.
+Repositorio para aprender a crear, publicar y administrar sitios web modernos.
 
-## Índice de temas
+![Curso](https://img.shields.io/badge/Curso-Administraci%C3%B3n%20y%20Programaci%C3%B3n%20Web-0A66C2?style=for-the-badge)
+![Nivel](https://img.shields.io/badge/Nivel-Universitario-1F8A70?style=for-the-badge)
+![Modalidad](https://img.shields.io/badge/Modalidad-Pr%C3%A1ctica-2E7D32?style=for-the-badge)
 
-1. [Protocolo HTTP](protocolo_http.md)
-2. [Administración básica de IIS](administracion_iis.md)
-3. [Guía de ASP clásico](ClassicASP/guia_asp_clasico.md)
+</div>
 
-## Tecnologías que se trabajan
+## Navegación rápida
 
-- .NET
-- IIS
-- XAMPP
-- Apache
-- MySQL
-- SQL Server
-- React
-- HTML
-- CSS
-- JavaScript
-- PHP
-- C#
+| Tema | Acceso |
+|---|---|
+| Protocolo HTTP | [Abrir material](protocolo_http.md) |
+| Administración básica de IIS | [Abrir material](administracion_iis.md) |
+| Ejemplo guiado ASP clásico | [Abrir guía](ClassicASP/guia_asp_clasico.md) |
+
+## ¿Qué vas a aprender?
+
+Este curso combina desarrollo web y administración de infraestructura para que los estudiantes entiendan cómo funciona un sitio completo, desde la interfaz hasta su despliegue en servidor.
+
+Se trabaja con práctica constante, ejercicios aplicados y escenarios reales de configuración, publicación y diagnóstico.
+
+## Ruta de aprendizaje
+
+```mermaid
+flowchart LR
+	A[HTTP y comunicación Web] --> B[Front-end: HTML CSS JavaScript]
+	B --> C[Back-end y lógica de servidor]
+	C --> D[Administración en IIS Apache XAMPP]
+	D --> E[Bases de datos: MySQL y SQL Server]
+	E --> F[Proyecto final desplegado]
+```
+
+## Stack tecnológico
+
+<div align="center">
+
+![DotNet](https://img.shields.io/badge/.NET-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)
+![IIS](https://img.shields.io/badge/IIS-0078D4?style=for-the-badge&logo=windows&logoColor=white)
+![XAMPP](https://img.shields.io/badge/XAMPP-FB7A24?style=for-the-badge&logo=apache&logoColor=white)
+![Apache](https://img.shields.io/badge/Apache-D22128?style=for-the-badge&logo=apache&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+![SQLServer](https://img.shields.io/badge/SQL%20Server-CC2927?style=for-the-badge&logo=microsoftsqlserver&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
+![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
+![CSharp](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp&logoColor=white)
+
+</div>
 
 ## Enfoque del curso
 
-- Desarrollo front-end con HTML, CSS y JavaScript.
-- Programación web con ASP.NET, PHP, React y C#.
-- Administración de sitios y despliegue en IIS, Apache y XAMPP.
-- Trabajo con bases de datos como MySQL y SQL Server.
-- Uso de entornos y herramientas para publicar, mantener y administrar sitios web.
+- Desarrollo front-end para construir interfaces claras y responsivas.
+- Programación del lado del servidor con tecnologías modernas y clásicas.
+- Administración de sitios y aplicaciones en entornos de hosting.
+- Diseño de soluciones conectadas a bases de datos relacionales.
+- Integración de buenas prácticas de despliegue, mantenimiento y diagnóstico.
 
-## Objetivo del curso
+## Objetivo
 
-Formar estudiantes capaces de desarrollar y administrar sitios web utilizando tecnologías actuales, comprendiendo la programación de la interfaz, la lógica de aplicación, la configuración de servidores y la administración de bases de datos.
+Formar estudiantes capaces de desarrollar y administrar sitios web completos, comprendiendo el ciclo de vida técnico de una aplicación web: diseño, construcción, despliegue y operación.

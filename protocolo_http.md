@@ -1,5 +1,30 @@
 # Resumen introductorio: Protocolo HTTP
 
+<div align="center">
+
+![Tema](https://img.shields.io/badge/Tema-HTTP-0A66C2?style=for-the-badge)
+![Nivel](https://img.shields.io/badge/Nivel-Introductorio-1F8A70?style=for-the-badge)
+![Enfoque](https://img.shields.io/badge/Enfoque-Cliente%20Servidor-2E7D32?style=for-the-badge)
+
+</div>
+
+## Navegacion rapida
+
+- [Que es HTTP](#1-que-es-http)
+- [Cliente y servidor](#2-cliente-y-servidor)
+- [Metodos HTTP](#6-metodos-http-principales)
+- [Codigos de estado](#9-codigos-de-estado-http)
+- [HTTP vs HTTPS](#11-http-y-https)
+- [Relacion con APIs REST](#13-relacion-con-apis-rest)
+
+```mermaid
+flowchart LR
+  A[Cliente] -->|Solicitud HTTP| B[Servidor]
+  B -->|Respuesta HTTP| A
+  B --> C[Codigo de estado]
+  B --> D[Headers y Body]
+```
+
 ## 1. ¿Qué es HTTP?
 
 **HTTP** significa **Hypertext Transfer Protocol**, o Protocolo de Transferencia de Hipertexto.

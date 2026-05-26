@@ -1,5 +1,38 @@
 # Guía paso a paso: ejecución de ASP clásico e interpretación del código
 
+<div align="center">
+
+![Tema](https://img.shields.io/badge/Tema-ASP%20Clasico-4B32C3?style=for-the-badge)
+![Servidor](https://img.shields.io/badge/Servidor-IIS-0078D4?style=for-the-badge)
+![Base%20de%20datos](https://img.shields.io/badge/Base%20de%20datos-SQL%20Server-CC2927?style=for-the-badge)
+
+</div>
+
+> Nota visual: este documento explica la ejecucion desde el lado del servidor, desde la solicitud del navegador hasta el HTML final que recibe el cliente.
+
+## Navegacion rapida
+
+- [Que es ASP clasico](#1-que-es-asp-clasico)
+- [Requisitos](#2-requisitos-para-hacerlo-correr)
+- [Base de datos usada](#21-base-de-datos-usada-por-el-ejemplo)
+- [Como ejecutar la pagina](#4-como-ejecutar-la-pagina)
+- [Flujo de ejecucion](#5-que-ocurre-cuando-el-navegador-pide-la-pagina)
+- [Explicacion de index.asp](#6-explicacion-paso-a-paso-de-indexasp)
+
+```mermaid
+sequenceDiagram
+    participant N as Navegador
+    participant I as IIS
+    participant A as Motor ASP
+    participant S as SQL Server
+    N->>I: Solicita index.asp
+    I->>A: Entrega archivo ASP
+    A->>S: Ejecuta consulta SQL
+    S-->>A: Devuelve registros
+    A-->>I: Genera HTML final
+    I-->>N: Respuesta HTTP con HTML
+```
+
 Este documento explica dos cosas:
 
 1. Cómo ejecutar un archivo ASP clásico en IIS.

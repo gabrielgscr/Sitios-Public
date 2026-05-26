@@ -1,5 +1,32 @@
 # Resumen introductorio: Administración básica de IIS
 
+<div align="center">
+
+![Tema](https://img.shields.io/badge/Tema-IIS-0078D4?style=for-the-badge)
+![Nivel](https://img.shields.io/badge/Nivel-Introductorio-1F8A70?style=for-the-badge)
+![Enfoque](https://img.shields.io/badge/Enfoque-Administracion%20Web-2E7D32?style=for-the-badge)
+
+</div>
+
+## Navegacion rapida
+
+- [Que es IIS](#1-que-es-iis)
+- [Conceptos principales](#2-conceptos-principales-de-iis)
+- [Application Pools](#3-grupos-de-aplicaciones-o-application-pools)
+- [Bindings](#4-bindings-o-enlaces-del-sitio)
+- [Logs de IIS](#10-logs-de-iis)
+- [Seguridad basica](#12-seguridad-basica-en-iis)
+- [Errores comunes](#13-errores-comunes-para-analizar)
+
+```mermaid
+flowchart TD
+	A[Sitio en IIS] --> B[Bindings]
+	A --> C[Application Pool]
+	A --> D[Ruta fisica y permisos]
+	C --> E[Proceso de ejecucion]
+	A --> F[Logs y diagnostico]
+```
+
 ## 1. ¿Qué es IIS?
 
 **IIS** significa **Internet Information Services**. Es el servidor web de Microsoft usado para publicar sitios web, aplicaciones web y servicios en sistemas Windows o Windows Server.
