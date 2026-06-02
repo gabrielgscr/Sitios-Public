@@ -1,0 +1,20 @@
+﻿@page "{id}"
+@model CoreWebSample.Pages.Personas.DeleteModel
+@{
+    ViewData["Title"] = "Eliminar Persona";
+}
+
+<h1>Eliminar Persona</h1>
+
+<h4>Persona</h4>
+<hr />
+<div>
+    <h4>¿Está seguro que desea eliminar esta persona?</h4>
+    <div>
+        <h5>@Model.Persona!.Nombre</h5>
+    </div>
+    <form method="post">
+        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+        <a asp-page="Index">Cancelar</a>
+    </form>
+</div>

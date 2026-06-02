@@ -1,0 +1,48 @@
+﻿@page "{id}"
+@model CoreWebSample.Pages.Personas.EditModel
+@{
+    ViewData["Title"] = "Editar Persona";
+}
+
+<h1>Editar Persona</h1>
+
+<h4>Persona</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div class="form-group">
+                <label asp-for="Persona.PersonaID" class="control-label"></label>
+                <input asp-for="Persona.PersonaID" class="form-control" readonly />
+                <span asp-validation-for="Persona.PersonaID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Persona.Nombre" class="control-label"></label>
+                <input asp-for="Persona.Nombre" class="form-control" />
+                <span asp-validation-for="Persona.Nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Persona.Tipo" class="control-label"></label>
+                <input asp-for="Persona.Tipo" class="form-control" />
+                <span asp-validation-for="Persona.Tipo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Persona.Gender" class="control-label"></label>
+                <input asp-for="Persona.Gender" class="form-control" />
+                <span asp-validation-for="Persona.Gender" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Persona.Password" class="control-label"></label>
+                <input asp-for="Persona.Password" class="form-control" />
+                <span asp-validation-for="Persona.Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Guardar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Volver a la lista</a>
+</div>
