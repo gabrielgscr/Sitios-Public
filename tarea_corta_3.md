@@ -1,4 +1,4 @@
-# Tarea corta 2 – Investigación WordPress
+# Tarea corta 3 – Investigación WordPress
 
 **Profesor:** Ing. Gabriel González Solano  
 **Tema:** Sitios -  Colegio Universitario de Cartago
