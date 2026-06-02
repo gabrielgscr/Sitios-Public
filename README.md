@@ -20,6 +20,9 @@ Repositorio para aprender a crear, publicar y administrar sitios web modernos.
 | Administración básica de IIS | [Abrir material](administracion_iis.md) |
 | Ejemplo guiado ASP clásico | [Abrir guía](ClassicASP/guia_asp_clasico.md) |
 | ASP .NET Framework y arquitectura n-capas | [Abrir resumen](ASPNetSample/resumen_aspnet_framework.md) |
+| Guía ASP.NET Framework | [Abrir guía](ASPNetSample/guia_aspnet_framework.md) |
+| Guía ASP.NET Core | [Abrir guía](CoreWebSample/guia_aspnet_core.md) |
+| Resumen comparativo ASP.NET | [Abrir resumen](resumen_tecnologias_aspnet.md) |
 
 ## ¿Qué vas a aprender?
 
