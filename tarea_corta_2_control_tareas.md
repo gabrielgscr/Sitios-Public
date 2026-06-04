@@ -61,4 +61,4 @@ Una vez finalizadas las actividades anteriores, debe realizar lo siguiente:
    - Script de base de datos.
    - Documento de análisis y diseño.
    - Documentación de pruebas.
-2. Debe entregarla el equipo de trabajo a más tardar el **16 de junio de 2026 antes de clases**.
+2. Debe entregarla el equipo de trabajo a más tardar el **23 de junio de 2026 antes de clases**.
