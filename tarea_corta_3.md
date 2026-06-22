@@ -159,5 +159,5 @@ Ejemplos de categorías, de las cuales deben escoger al menos 3 distintas:
 ## Aspectos administrativos
 
 1. Debe realizarse en los equipos de trabajo definidos.
-2. Fecha de entrega: **30 de junio de 2026**.
+2. Fecha de entrega: **07 de julio de 2026**.
 3. La valoración es individual, basada en lo indicado en el documento de responsabilidades.
