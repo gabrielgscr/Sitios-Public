@@ -1,0 +1,125 @@
+:root {
+    --app-primary: #4f46e5;
+    --app-primary-dark: #3730a3;
+    --app-bg: #f4f6fb;
+}
+
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at 10% 0%, rgba(79, 70, 229, .09), transparent 26rem),
+        var(--app-bg);
+    color: #172033;
+}
+
+.app-navbar {
+    background: linear-gradient(120deg, #312e81, var(--app-primary));
+}
+
+.section-kicker {
+    color: var(--app-primary);
+    font-size: .76rem;
+    font-weight: 800;
+    letter-spacing: .11em;
+    text-transform: uppercase;
+}
+
+.card {
+    border-radius: 1rem;
+}
+
+.table > :not(caption) > * > * {
+    padding: 1rem 1.25rem;
+}
+
+.table thead th {
+    background: #f8f9fc;
+    color: #667085;
+    font-size: .75rem;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.avatar {
+    display: inline-grid;
+    flex: 0 0 2.65rem;
+    width: 2.65rem;
+    height: 2.65rem;
+    place-items: center;
+    border-radius: 50%;
+    background: #e0e7ff;
+    color: var(--app-primary-dark);
+    font-size: .8rem;
+    font-weight: 800;
+}
+
+.empty-state {
+    padding: 5rem 1.5rem;
+}
+
+.empty-icon,
+.delete-icon {
+    display: grid;
+    width: 4rem;
+    height: 4rem;
+    place-items: center;
+    border-radius: 1.25rem;
+    font-size: 1.6rem;
+}
+
+.empty-icon {
+    background: #e0e7ff;
+    color: var(--app-primary);
+}
+
+.delete-icon {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.form-shell,
+.error-page {
+    max-width: 900px;
+}
+
+.form-label {
+    font-weight: 600;
+}
+
+.form-control {
+    border-color: #d7dce5;
+}
+
+.form-control:focus {
+    border-color: #818cf8;
+    box-shadow: 0 0 0 .25rem rgba(79, 70, 229, .14);
+}
+
+.back-link {
+    color: #667085;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    color: var(--app-primary);
+}
+
+.btn-primary {
+    --bs-btn-bg: var(--app-primary);
+    --bs-btn-border-color: var(--app-primary);
+    --bs-btn-hover-bg: var(--app-primary-dark);
+    --bs-btn-hover-border-color: var(--app-primary-dark);
+}
+
+@media (max-width: 575.98px) {
+    .table > :not(caption) > * > * {
+        padding: .85rem;
+    }
+
+    .btn-lg {
+        font-size: 1rem;
+    }
+}
+

@@ -1,0 +1,5 @@
+/app/Config/database.local.php
+/.idea/
+/.vscode/
+*.log
+
