@@ -1,0 +1,1 @@
+Este es el sitio para configurar en XAMPP con Apache y PHP
