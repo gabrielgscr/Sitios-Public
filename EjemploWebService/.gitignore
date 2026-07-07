@@ -1,0 +1,45 @@
+# Visual Studio / .NET Framework
+.vs/
+
+# Build results
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+TestResults/
+
+# NuGet packages
+packages/
+*.nupkg
+*.snupkg
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider / ReSharper / VS Code
+.idea/
+.vscode/
+_ReSharper*/
+*.DotSettings.user
+
+# ASP.NET / web app caches
+app_data/
+App_Data/
+
+# Publish output
+publish/
+PublishedWebsites/
+
+# IIS / IIS Express
+IISExpress/TraceLogFiles/
+IISExpress/Temporary ASP.NET Files/
+
+# Misc
+*.cache
+*.log
+*.tmp
+*.vspscc
+*.vssscc
