@@ -1,0 +1,37 @@
+# Build outputs
+bin/
+obj/
+out/
+
+# Visual Studio
+.vs/
+*.slnLaunch.user
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider / ReSharper
+_ReSharper*/
+*.DotSettings.user
+
+# VS Code
+.vscode/
+
+# Test results
+TestResults/
+*.trx
+*.coverage
+*.coveragexml
+
+# Publish outputs
+publish/
+artifacts/
+Properties/PublishProfiles/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db

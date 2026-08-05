@@ -1,0 +1,51 @@
+@page "{id}"
+@model EjemploMicroServicioPersona.ConsumoWeb.Pages.Personas.EditModel
+@{
+    ViewData["Title"] = "Editar Persona";
+}
+
+<h1 class="display-6 mb-4">Editar Persona</h1>
+
+@if (Model.ErrorMessage is not null)
+{
+    <div class="alert alert-danger">@Model.ErrorMessage</div>
+}
+
+<form method="post" class="card shadow-sm p-4">
+    <div class="row g-3">
+        <div class="col-md-4">
+            <label asp-for="Persona.PersonaId" class="form-label"></label>
+            <input asp-for="Persona.PersonaId" class="form-control" readonly />
+        </div>
+        <div class="col-md-8">
+            <label asp-for="Persona.Nombre" class="form-label"></label>
+            <input asp-for="Persona.Nombre" class="form-control" />
+            <span asp-validation-for="Persona.Nombre" class="text-danger"></span>
+        </div>
+        <div class="col-md-4">
+            <label asp-for="Persona.Tipo" class="form-label">Tipo</label>
+            <select asp-for="Persona.Tipo" class="form-select">
+                <option value="1">VIP</option>
+                <option value="2">Premium</option>
+                <option value="3">Standard</option>
+            </select>
+            <span asp-validation-for="Persona.Tipo" class="text-danger"></span>
+        </div>
+        <div class="col-md-4">
+            <label asp-for="Persona.Gender" class="form-label">Género</label>
+            <select asp-for="Persona.Gender" class="form-select">
+                <option value="male">male</option>
+                <option value="female">female</option>
+            </select>
+            <span asp-validation-for="Persona.Gender" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="mt-4 d-flex gap-2">
+        <button type="submit" class="btn btn-success">Guardar</button>
+        <a asp-page="/Personas/Index" class="btn btn-outline-secondary">Volver</a>
+    </div>
+</form>
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,69 @@
+@page
+@model EjemploMicroServicioPersona.ConsumoWeb.Pages.Personas.IndexModel
+@{
+    ViewData["Title"] = "Personas";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="display-6">Personas</h1>
+    <a class="btn btn-primary" asp-page="/Personas/Create">
+        <i class="bi bi-plus-circle"></i> Nueva Persona
+    </a>
+</div>
+
+@if (Model.ErrorMessage is not null)
+{
+    <div class="alert alert-danger">@Model.ErrorMessage</div>
+}
+
+@if (Model.Personas?.Count > 0)
+{
+    <div class="card shadow-sm">
+        <div class="table-responsive">
+            <table class="table table-hover align-middle mb-0">
+                <thead class="table-light">
+                    <tr>
+                        <th>PersonaId</th>
+                        <th>Nombre</th>
+                        <th>Tipo</th>
+                        <th>Género</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                @foreach (var p in Model.Personas)
+                {
+                    <tr>
+                        <td>@p.PersonaId</td>
+                        <td>@p.Nombre</td>
+                        <td>
+                            @(p.Tipo switch
+                            {
+                                1 => "VIP",
+                                2 => "Premium",
+                                3 => "Standard",
+                                _ => p.Tipo.ToString()
+                            })
+                        </td>
+                        <td>@p.Gender</td>
+                        <td class="text-end">
+                            <a class="btn btn-sm btn-outline-secondary" asp-page="/Personas/Edit" asp-route-id="@p.PersonaId">
+                                <i class="bi bi-pencil-square"></i> Editar
+                            </a>
+                            <form method="post" asp-page-handler="Delete" asp-route-id="@p.PersonaId" class="d-inline" onsubmit="return confirm('¿Seguro que desea eliminar?');">
+                                <button type="submit" class="btn btn-sm btn-outline-danger">
+                                    <i class="bi bi-trash"></i> Eliminar
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        </div>
+    </div>
+}
+else
+{
+    <div class="alert alert-info">No hay personas registradas.</div>
+}

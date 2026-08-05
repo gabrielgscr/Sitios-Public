@@ -1,0 +1,316 @@
+{
+  "info": {
+    "_postman_id": "8c73ca67-1ce6-4fce-95de-c6b98d3a18d0",
+    "name": "ApiNodeJs - Personas REST",
+    "description": "Coleccion para validar el contrato REST del recurso Personas.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000/api"
+    },
+    {
+      "key": "personaId",
+      "value": ""
+    }
+  ],
+  "item": [
+    {
+      "name": "01 - Crear persona (POST /personas)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"PersonaID\": \"P001\",\n  \"Nombre\": \"Ana\",\n  \"Tipo\": 1,\n  \"Gender\": \"F\",\n  \"Password\": \"123456\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/personas",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "personas"
+          ]
+        },
+        "description": "Crea un recurso persona. Debe responder 201 y cabecera Location."
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status 201', function () {",
+              "    pm.response.to.have.status(201);",
+              "});",
+              "",
+              "pm.test('Header Location presente', function () {",
+              "    pm.expect(pm.response.headers.has('Location')).to.eql(true);",
+              "});",
+              "",
+              "const body = pm.response.json();",
+              "pm.test('No expone Password', function () {",
+              "    pm.expect(body).to.not.have.property('Password');",
+              "});",
+              "",
+              "if (body.PersonaID) {",
+              "    pm.collectionVariables.set('personaId', body.PersonaID);",
+              "}"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "02 - Listar personas (GET /personas)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/personas",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "personas"
+          ]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status 200', function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "",
+              "const body = pm.response.json();",
+              "pm.test('Respuesta es arreglo', function () {",
+              "    pm.expect(Array.isArray(body)).to.eql(true);",
+              "});",
+              "",
+              "pm.test('No expone Password en items', function () {",
+              "    body.forEach(function (item) {",
+              "        pm.expect(item).to.not.have.property('Password');",
+              "    });",
+              "});"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "03 - Obtener persona por id (GET /personas/:id)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/personas/{{personaId}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "personas",
+            "{{personaId}}"
+          ]
+        },
+        "description": "Requiere personaId cargado desde el POST o configurado manualmente."
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status 200', function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "",
+              "const body = pm.response.json();",
+              "pm.test('ID coincide', function () {",
+              "    pm.expect(body.PersonaID).to.eql(pm.collectionVariables.get('personaId'));",
+              "});",
+              "",
+              "pm.test('No expone Password', function () {",
+              "    pm.expect(body).to.not.have.property('Password');",
+              "});"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "04 - Reemplazo completo (PUT /personas/:id)",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"PersonaID\": \"{{personaId}}\",\n  \"Nombre\": \"Ana Maria\",\n  \"Tipo\": 2,\n  \"Gender\": \"F\",\n  \"Password\": \"nueva-clave\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/personas/{{personaId}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "personas",
+            "{{personaId}}"
+          ]
+        },
+        "description": "PUT exige recurso completo."
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status 200', function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "",
+              "const body = pm.response.json();",
+              "pm.test('Se actualizaron campos clave', function () {",
+              "    pm.expect(body.Nombre).to.eql('Ana Maria');",
+              "    pm.expect(body.Tipo).to.eql(2);",
+              "});",
+              "",
+              "pm.test('No expone Password', function () {",
+              "    pm.expect(body).to.not.have.property('Password');",
+              "});"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "05 - Actualizacion parcial (PATCH /personas/:id)",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"Nombre\": \"Ana M.\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/personas/{{personaId}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "personas",
+            "{{personaId}}"
+          ]
+        },
+        "description": "PATCH permite cambios parciales."
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status 200', function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "",
+              "const body = pm.response.json();",
+              "pm.test('Solo cambia campo solicitado', function () {",
+              "    pm.expect(body.Nombre).to.eql('Ana M.');",
+              "});",
+              "",
+              "pm.test('No expone Password', function () {",
+              "    pm.expect(body).to.not.have.property('Password');",
+              "});"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "06 - Borrar persona (DELETE /personas/:id)",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/personas/{{personaId}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "personas",
+            "{{personaId}}"
+          ]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status 204', function () {",
+              "    pm.response.to.have.status(204);",
+              "});",
+              "",
+              "pm.test('Body vacio', function () {",
+              "    pm.expect(pm.response.text()).to.eql('');",
+              "});"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "07 - Verificar no encontrado (GET /personas/:id)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/personas/{{personaId}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "personas",
+            "{{personaId}}"
+          ]
+        },
+        "description": "Despues del DELETE debe responder 404."
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status 404', function () {",
+              "    pm.response.to.have.status(404);",
+              "});"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

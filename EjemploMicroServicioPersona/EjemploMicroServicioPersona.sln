@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36414.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EjemploMicroServicioPersona", "EjemploMicroServicioPersona\EjemploMicroServicioPersona.csproj", "{32F033DA-379D-4275-AF46-61A8B4C203CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EjemploMicroServicioPersona.ConsumoWeb", "EjemploMicroServicioPersona.ConsumoWeb\EjemploMicroServicioPersona.ConsumoWeb.csproj", "{5FBA2278-28B2-4CCC-86AF-D3F6CA18C1C1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{32F033DA-379D-4275-AF46-61A8B4C203CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32F033DA-379D-4275-AF46-61A8B4C203CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32F033DA-379D-4275-AF46-61A8B4C203CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32F033DA-379D-4275-AF46-61A8B4C203CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5FBA2278-28B2-4CCC-86AF-D3F6CA18C1C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FBA2278-28B2-4CCC-86AF-D3F6CA18C1C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FBA2278-28B2-4CCC-86AF-D3F6CA18C1C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FBA2278-28B2-4CCC-86AF-D3F6CA18C1C1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EC5555CC-9D65-40A5-8245-EE6E6F8D9357}
+	EndGlobalSection
+EndGlobal
