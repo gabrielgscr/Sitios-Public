@@ -5,6 +5,7 @@ namespace EjemploMicroServicioPersona.Services
     public interface IPersonaService
     {
         Task<IEnumerable<Persona>> GetAllAsync();
+        Task<PagedResult<Persona>> GetPageAsync(int pageNumber, int pageSize);
         Task<Persona?> GetByIdAsync(string id);
         //Crear una persona
         Task<int> CreateAsync(Persona persona);

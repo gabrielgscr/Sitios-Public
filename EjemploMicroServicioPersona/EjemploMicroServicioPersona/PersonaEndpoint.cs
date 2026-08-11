@@ -20,6 +20,26 @@ namespace EjemploMicroServicioPersona
             .WithName("GetAllPersonas")
             .WithOpenApi();
 
+            group.MapGet("/page", async (
+                [FromServices] IPersonaService personaService,
+                int pageNumber = 1,
+                int pageSize = 10) =>
+            {
+                if (pageNumber < 1)
+                {
+                    return Results.BadRequest(new { message = "El número de página debe ser mayor que cero." });
+                }
+
+                if (pageSize is < 1 or > 100)
+                {
+                    return Results.BadRequest(new { message = "El tamaño de página debe estar entre 1 y 100." });
+                }
+
+                return Results.Ok(await personaService.GetPageAsync(pageNumber, pageSize));
+            })
+            .WithName("GetPersonasPage")
+            .WithOpenApi();
+
             group.MapGet("/{id}", async ([FromServices] IPersonaService personaService, string id) =>
             {
                 var p = await personaService.GetByIdAsync(id);

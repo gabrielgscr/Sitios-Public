@@ -62,6 +62,7 @@ La solucion fue creada como dos proyectos Web en una misma solucion:
 ### API REST
 
 - `GET /api/Persona`
+- `GET /api/Persona/page?pageNumber=1&pageSize=10`
 - `GET /api/Persona/{id}`
 - `POST /api/Persona`
 - `PUT /api/Persona/{id}`
@@ -88,6 +89,12 @@ La API usa la cadena de conexion definida en el archivo de configuracion del pro
 La aplicacion web consumidora usa `PersonaApi:BaseUrl` para apuntar al microservicio.
 
 Si cambias el host o el puerto del servicio, actualiza esa configuracion antes de probar la interfaz web.
+
+### Paginacion y concurrencia de lecturas
+
+El endpoint `GET /api/Persona/page` pagina desde SQL Server con `ORDER BY`, `OFFSET` y `FETCH`, y devuelve los campos `items`, `pageNumber`, `pageSize`, `totalCount` y `totalPages`.
+
+Para evitar que las lecturas de mantenimiento bloqueen escrituras, ejecuta una vez el script [enable-read-committed-snapshot.sql](Database/enable-read-committed-snapshot.sql) con permisos de administrador en SQL Server. Esta configuracion usa versionado de filas y evita el uso de `NOLOCK`, que puede devolver datos no confirmados o duplicados.
 
 ## Notas academicas
 

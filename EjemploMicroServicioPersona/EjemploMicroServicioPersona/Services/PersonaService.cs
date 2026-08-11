@@ -17,6 +17,11 @@ namespace EjemploMicroServicioPersona.Services
             return await _personaRepository.GetAllAsync();
         }
 
+        public async Task<PagedResult<Persona>> GetPageAsync(int pageNumber, int pageSize)
+        {
+            return await _personaRepository.GetPageAsync(pageNumber, pageSize);
+        }
+
         public async Task<Persona?> GetByIdAsync(string id)
         {
             return await _personaRepository.GetByIdAsync(id);

@@ -21,6 +21,36 @@ namespace EjemploMicroServicioPersona.Repository
             }
         }
 
+        public async Task<PagedResult<Persona>> GetPageAsync(int pageNumber, int pageSize)
+        {
+            const string sql = @"
+                SELECT COUNT(*) FROM Persona;
+
+                SELECT PersonaID AS PersonaId, Nombre, Tipo, Gender
+                FROM Persona
+                ORDER BY PersonaID
+                OFFSET @offset ROWS FETCH NEXT @pageSize ROWS ONLY;";
+
+            using (var connection = _dbConnectionFactory.CreateConnection())
+            using (var result = await connection.QueryMultipleAsync(sql, new
+            {
+                offset = (pageNumber - 1) * pageSize,
+                pageSize
+            }))
+            {
+                var totalCount = await result.ReadSingleAsync<int>();
+                var items = (await result.ReadAsync<Persona>()).AsList();
+
+                return new PagedResult<Persona>
+                {
+                    Items = items,
+                    PageNumber = pageNumber,
+                    PageSize = pageSize,
+                    TotalCount = totalCount
+                };
+            }
+        }
+
         public async Task<Persona?> GetByIdAsync(string id)
         {
             using (var connection = _dbConnectionFactory.CreateConnection())
